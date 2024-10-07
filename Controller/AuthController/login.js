@@ -17,7 +17,7 @@ export const loginController=async(req,res)=>{
     console.log(checkUser)
 
     //token generation
-    const token= genrateToken({data:checkUser,expiresIn:'120s'})
+    const token= genrateToken({data:checkUser,expiresIn:'240s'})
 
     res.cookie('token',token,{http:true})
     res.setHeader('token', 'Beares'+" "+token);
