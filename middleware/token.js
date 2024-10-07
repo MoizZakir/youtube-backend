@@ -35,3 +35,26 @@ export const verify=(req,res,next)=>{
     })
     
 }
+
+//verify token Authorization
+export const verifyAuth=(req,res,next)=>{
+    
+    verify(req,res,()=>{
+        console.log(req.user)    
+        console.log(req.params.id)    
+        if(req.user.payload._id==req.params.id){
+            next()
+        }
+        else{
+            return res.send('you are not allowed to do that')
+        }
+    })
+
+
+    
+   
+    
+
+    
+    
+}
