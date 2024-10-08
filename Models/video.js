@@ -20,8 +20,17 @@ const Video= new Schema({
         type:String,
         require:true
     },
+    veiws:{
+        type:Array,
+        default:[]
+
+    },
 
     likes:{
+        type:Array,
+        default:[]
+    },
+    dislikes:{
         type:Array,
         default:[]
     },

@@ -1,5 +1,5 @@
 import { genrateToken } from '../../middleware/token.js';
-import userSchema from '../../Models/user.js'
+import UserSchema from '../../Models/user.js'
 import bcrypt, { compareSync } from 'bcrypt'
 
 export const loginController=async(req,res)=>{
@@ -8,7 +8,7 @@ export const loginController=async(req,res)=>{
     //check form feilds
     if (!email || !password)return res.send('Please Enter email or Password')
     //find user
-    const checkUser= await userSchema.findOne({email:email})
+    const checkUser= await UserSchema.findOne({email:email})
     if(!checkUser) return  res.send('no user found')
 //check user password
        const checkPassword= bcrypt.compareSync(password,checkUser.password)

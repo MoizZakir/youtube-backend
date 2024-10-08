@@ -1,5 +1,5 @@
 import bycrypt from 'bcrypt'
-import userSchema from '../../Models/user.js'
+import UserSchema from '../../Models/user.js'
 import { genrateToken } from '../../middleware/token.js'
 
 
@@ -14,7 +14,7 @@ export const signupController = async (req, res) => {
         }
 
         //check user in database
-        const checkUser = await userSchema.findOne({ email: email })
+        const checkUser = await UserSchema.findOne({ email: email })
         console.log(checkUser)
         if (checkUser) return res.send('user already exist')
 
@@ -23,7 +23,7 @@ export const signupController = async (req, res) => {
         const hashedPassword = await bycrypt.hash(password, salt)
 
         //create user
-        const user = await new userSchema({
+        const user = await new UserSchema({
             name: name,
             email: email,
             password: hashedPassword,

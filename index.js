@@ -6,6 +6,7 @@ import { dbConnection } from './utils/Connection.js';
 import cookieParser from "cookie-parser"
 import HomeRoute from './Routes/Home/home.js';
 import VideoRoute from './Routes/Video/video.js';
+import UserRoute from './Routes/User/user.js';
 
 
 
@@ -23,6 +24,7 @@ app.use(cors())
 app.use('/api/auth',AuthRoute)
 app.use('/api/home',HomeRoute)
 app.use('/api/video',VideoRoute)
+app.use('/api/user',UserRoute)
 app.listen(port,()=>{
     console.log('server Started at port ',port)
 })

@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-const userSchema=new Schema({
+const UserSchema=new Schema({
     name:{
         type:String,
         require:true,
@@ -56,4 +56,4 @@ const userSchema=new Schema({
 
 },{timestamps:true})
 
-export default mongoose.model('YoutubeUsers',userSchema)
+export default mongoose.model('YoutubeUsers',UserSchema)
