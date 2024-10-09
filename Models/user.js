@@ -14,7 +14,15 @@ const UserSchema=new Schema({
 
         
 
-    }
+    },
+    dob:{
+      type:String,
+      require:true,
+      max:50
+
+      
+
+  }
     ,
     email:{
         type:String,

@@ -12,7 +12,9 @@ return token
 
 // verify token function
 export const verify=(req,res,next)=>{
-    let token=req.headers?.cookie?.slice(6)
+    console.log('headers===>',req.headers)
+    let token=req.headers?.authorization.split(' ')[1]
+    
 
 
     
@@ -21,13 +23,14 @@ export const verify=(req,res,next)=>{
     
     if(!token){
         console.log('token nahi mila')
-        return res.send('you are not allowed')
+        return res.json({message:'you are not allowed'})
     }
     
-
+    
     jwt.verify(token,process.env.JWT_SECRET,(err,user)=>{
         if(err){
-            return res.send('Your token has Expired-')
+            return res.json({message:'Your token has Expired-'})
+            
         }
         req.user=user
         console.log(user)

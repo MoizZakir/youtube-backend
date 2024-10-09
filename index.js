@@ -11,15 +11,17 @@ import UserRoute from './Routes/User/user.js';
 
 
 const app=express();
-dbConnection()
-app.use(cookieParser())
-app.use(express.json())
 
 
 dotenv.config()
 const port=process.env.PORT 
+app.use(cors()) 
+dbConnection()
+// app.use(cookieParser())
+app.use(express.json())
 
-app.use(cors())
+
+
 
 app.use('/api/auth',AuthRoute)
 app.use('/api/home',HomeRoute)
