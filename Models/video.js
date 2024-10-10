@@ -12,6 +12,14 @@ const Video= new Schema({
         require:true
 
     },
+    desc:{
+        type:String,
+        max:200,
+        min:5,
+        require:true
+
+    },
+    
     thumbnail:{
         type:String,
         require:true
