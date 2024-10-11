@@ -1,11 +1,11 @@
 import Video from "../../Models/video.js"
 export const videoCreateController=async(req,res)=>{
 
-    const {title,thumbnail,video,keywords}=req.body
+    const {title,thumbnail,video,keywords,desc}=req.body
     const {_id:authId}=req.user.payload
     try {
         
-        if(!title ||!thumbnail ||!video ||!keywords)return res.send('require all feilds')
+        if(!title ||!thumbnail ||!video ||!keywords ||!desc )return res.send('require all feilds')
         
             //prepare data
         const videoData=await new Video({
@@ -14,6 +14,7 @@ export const videoCreateController=async(req,res)=>{
     thumbnail:thumbnail,
     video:video,
     keywords:keywords,
+    desc:desc
             
     
         })
