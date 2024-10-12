@@ -7,6 +7,7 @@ import { videoDeleteController } from "../../Controller/VideoController/videoDel
 import { videoLikeController } from "../../Controller/VideoController/videoLikeController.js";
 import { videoDisLikeController } from "../../Controller/VideoController/videoDisLikeController.js";
 import { videoIdGetController } from "../../Controller/VideoController/videoIdGetcontroller.js";
+import { videoUpadateController } from "../../Controller/VideoController/videoUpdateController.js";
 
 const VideoRoute=express.Router();
 VideoRoute.post('/create',verify,videoCreateController)
@@ -16,5 +17,6 @@ VideoRoute.get('/',videoSingleGetController)
 VideoRoute.delete('/:id',verifyAuth,videoDeleteController)
 VideoRoute.put('/like/:id',verify,videoLikeController)
 VideoRoute.put('/dislike/:id',verify,videoDisLikeController)
+VideoRoute.put('/:id',videoUpadateController)
 
 export default VideoRoute
