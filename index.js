@@ -24,6 +24,9 @@ app.use(express.json())
 
 
 app.use('/api/auth',AuthRoute)
+app.use('/',(req,res)=>{
+res.send('succefully run')
+})
 app.use('/api/home',HomeRoute)
 app.use('/api/video',VideoRoute)
 app.use('/api/user',UserRoute)
