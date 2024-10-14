@@ -15,8 +15,8 @@ VideoRoute.get('/all',videoGetAllController)
 VideoRoute.get('/:id',videoIdGetController)
 VideoRoute.get('/',videoSingleGetController)
 VideoRoute.delete('/:id',verifyAuth,videoDeleteController)
-VideoRoute.put('/like/:id',verify,videoLikeController)
-VideoRoute.put('/dislike/:id',verify,videoDisLikeController)
+VideoRoute.put('/like',verify,videoLikeController)
+VideoRoute.put('/dislike',verify,videoDisLikeController)
 VideoRoute.put('/:id',videoUpadateController)
 
 export default VideoRoute

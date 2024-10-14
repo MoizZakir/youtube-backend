@@ -1,7 +1,7 @@
 import Video from "../../Models/video.js";
 
 export const videoLikeController=async(req,res)=>{
-    const videoId=req.params.id;
+    const videoId=req.body.id;
     const userId=req.user.payload?._id
 
 

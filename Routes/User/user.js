@@ -6,8 +6,8 @@ import { userGetController } from "../../Controller/User/userGetcontroller.js";
 
 const UserRoute=express.Router()
 
-UserRoute.put('/follow/:id',verify,followController)
-UserRoute.put('/unfollow/:id',verify,unFollowController)
+UserRoute.put('/follow',verify,followController)
+UserRoute.put('/unfollow',verify,unFollowController)
 UserRoute.get('/:id',userGetController)
 
 export default UserRoute
