@@ -18,7 +18,7 @@ try {
     console.log(checkUser)
 
     //token generation
-    const token= genrateToken({data:checkUser,expiresIn:'1000s'})
+    const token= genrateToken({data:checkUser,expiresIn:'5d'})
 
     // res.cookie('token',token,{http:true})
     // res.setHeader('token', 'Beares'+" "+token);

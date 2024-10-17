@@ -43,7 +43,7 @@ export const signupController = async (req, res) => {
         if (!userSend) return res.send(userSend)
         userSend.password = undefined
         //generate token
-        const token = genrateToken({ data: userSend, expiresIn: '24h' })
+        const token = genrateToken({ data: userSend, expiresIn: '5d' })
 
         // res.setHeaders('token', token)
         // res.cookie('token',token,{ maxAge: 60000,httpOnly:true})
@@ -55,6 +55,7 @@ export const signupController = async (req, res) => {
             status:true ,
             message:'user register succesfully',
             token:token
+            ,data:userSend
         })
 
     } catch (error) {
